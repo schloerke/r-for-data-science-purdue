@@ -2,7 +2,7 @@
 
 ## Chat:
 
-Please post comments and questions here: [Gitter](https://gitter.im/r-for-data-science-purdue/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
+Please post comments and questions here: [Gitter](https://gitter.im/r4ds-purdue/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
  
 
 ## Schedule:
