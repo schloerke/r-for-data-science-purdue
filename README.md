@@ -9,6 +9,13 @@ Please post comments and questions here: [Gitter](https://gitter.im/r4ds-purdue/
 
 Subscribe here: [Google Calendar (that can't be embeded)](https://calendar.google.com/calendar/embed?src=4aiemu59kqid73n3dkojvt9ics%40group.calendar.google.com&ctz=America/New_York&mode=AGENDA)
 
+
+Wednesdays<br/>
+5:30-6:30pm
+SC 231 - 02/22, 03/01, 03/08, (SPRING BREAK), 03/22, 03/29
+
+Room TBD for month of March.  Would like to downsize if appropriate.
+
 ## Topics to cover:
 
 1. [ggplot2](http://r4ds.had.co.nz/data-visualisation.html); √
