@@ -11,7 +11,7 @@ Subscribe here: [Google Calendar (that can't be embeded)](https://calendar.googl
 
 ## Topics to cover:
 
-1. [ggplot2](http://r4ds.had.co.nz/data-visualisation.html)
+1. [ggplot2](http://r4ds.had.co.nz/data-visualisation.html); √
 1. [github](https://desktop.github.com), [R markdown](http://r4ds.had.co.nz/r-markdown.html), [tibbles](http://r4ds.had.co.nz/tibbles.html) and [strings](http://r4ds.had.co.nz/strings.html)
 1. [tidy data](http://r4ds.had.co.nz/tidy-data.html) and [data transformation](http://r4ds.had.co.nz/transform.html). Maybe [relational data](http://r4ds.had.co.nz/relational-data.html)
 1. [functions](http://r4ds.had.co.nz/functions.html) and [pipes](http://r4ds.had.co.nz/pipes.html)
