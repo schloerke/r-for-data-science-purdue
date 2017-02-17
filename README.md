@@ -15,7 +15,7 @@ Wednesdays<br/>
 SC 231 <br/>
 02/22, 03/01, 03/08, (SPRING BREAK), 03/22, 03/29
 
-Room TBD for month of March.  Would like to downsize if appropriate.
+Room TBD for month of April.  Would like to downsize if appropriate.
 
 ## Topics to cover:
 
