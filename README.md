@@ -42,3 +42,28 @@ Room TBD for month of April (05, 12, 19, and 26).  Would like to downsize if app
 * **Advanced R**
     * Link: http://adv-r.had.co.nz
     * "This is the companion website for “[Advanced R](http://amzn.com/1466586966?tag=devtools-20)”, a book in Chapman & Hall’s R Series. The book is designed primarily for R users who want to improve their programming skills and understanding of the language. It should also be useful for programmers coming to R from other languages, as it explains some of R’s quirks and shows how some parts that seem horrible do have a positive side."
+    
+    
+### Learn R
+
+* ***DataCamp***: 
+  * Link: https://www.datacamp.com/getting-started?step=2&track=r
+  * Price: Maybe $30 a month.  Worth the price.
+* ***swirl***:
+  * Link: http://swirlstats.com/students.html
+  * "Learn R, in R"
+  * Course Descriptions: https://github.com/swirldev/swirl_courses#swirl-courses
+  * Price: Free!
+  * Usage:
+  ```{r}
+  # setup
+  install.packages("swirl")
+  library("swirl")
+  swirl::install_course_url("https://github.com/swirldev/swirl_courses/archive/master.zip", multi = TRUE)
+  
+  # regular useage
+  library(swirl)
+  swirl()
+  ```
+* RStudio Resources:
+  * Link: https://www.rstudio.com/online-learning/
