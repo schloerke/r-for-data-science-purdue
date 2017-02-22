@@ -55,17 +55,17 @@ diamonds
 str(as.data.frame(diamonds))
 glimpse(diamonds)
 diamonds[,1]
-as.data.frame(barretds)[,1]
-barretds[,1]
-barretds[[1]]
-barretds
-barretds$carat
-barretds
-barretds[, 1]
-barretds[1, ]
-as.data.frame(barretds)[1, ]
+as.data.frame(diamonds)[,1]
+diamonds[,1]
+diamonds[[1]]
+diamonds
+diamonds$carat
+diamonds
+diamonds[, 1]
+diamonds[1, ]
+as.data.frame(diamonds)[1, ]
 library(dplyr)
-barretds %>% filter(carat <= 0.25)
+diamonds %>% filter(carat <= 0.25)
 
 
 my_string <- "
