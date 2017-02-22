@@ -1,0 +1,89 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r, echo=TRUE, eval=TRUE, fig.width=10}
+plot(pressure)
+plot(runif(10))
+```
+
+Text above
+```{r, cache=TRUE}
+fib <- function(n) {
+  if (n < 2) return(1)
+  
+  fib(n - 1) + fib(n - 2)
+}
+fib(34)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+Notes
+
+```{r}
+library(tidyverse)
+library(tibble)
+as_tibble(iris)
+as_tibble(iris)
+as_tibble(diamonds)
+library(ggplot2)
+as_tibble(diamonds)
+diamonds
+as.data.frame(diamonds)
+diamonds
+str(as.data.frame(diamonds))
+glimpse(diamonds)
+diamonds[,1]
+as.data.frame(barretds)[,1]
+barretds[,1]
+barretds[[1]]
+barretds
+barretds$carat
+barretds
+barretds[, 1]
+barretds[1, ]
+as.data.frame(barretds)[1, ]
+library(dplyr)
+barretds %>% filter(carat <= 0.25)
+
+
+my_string <- "
+multi
+line
+string"
+```
+
+
+
+```{r}
+diamonds %>%
+  mutate(
+    cut_awsome = str_replace(cut, "Good", "Awesome")
+  ) ->
+barret_diamonds
+
+barret_diamonds
+barret_diamonds$cut
+```
+
