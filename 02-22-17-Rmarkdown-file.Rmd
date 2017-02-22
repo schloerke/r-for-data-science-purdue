@@ -87,3 +87,9 @@ barret_diamonds
 barret_diamonds$cut
 ```
 
+
+Regex tester: http://regexpal.com.s3-website-us-east-1.amazonaws.com
+
+Markdown notes: https://daringfireball.net/projects/markdown/syntax
+
+Get a github account!
