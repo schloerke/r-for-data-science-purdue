@@ -21,6 +21,13 @@ Room TBD for month of April (05, 12, 19, and 26).  Would like to downsize if app
 
 1. 02/15 - [ggplot2](http://r4ds.had.co.nz/data-visualisation.html); √
 1. 02/22 - [github](https://desktop.github.com), [R markdown](http://r4ds.had.co.nz/r-markdown.html), [tibbles](http://r4ds.had.co.nz/tibbles.html) and [strings](http://r4ds.had.co.nz/strings.html)
+  * Github
+      * Learn: https://try.github.io
+      * Guides: https://guides.github.com
+  * Markdown
+      * Daring Fireball: https://daringfireball.net/projects/markdown/syntax
+  * Regular Expressions
+      * Regex Pal: http://regexpal.com.s3-website-us-east-1.amazonaws.com
 1. 03/01 - [tidy data](http://r4ds.had.co.nz/tidy-data.html) and [data transformation](http://r4ds.had.co.nz/transform.html). Maybe [relational data](http://r4ds.had.co.nz/relational-data.html)
 1. 03/08 - [functions](http://r4ds.had.co.nz/functions.html) and [pipes](http://r4ds.had.co.nz/pipes.html)
 1. 03/22 - [model basics](http://r4ds.had.co.nz/model-basics.html)
