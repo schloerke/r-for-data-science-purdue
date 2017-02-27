@@ -18,7 +18,7 @@ Wednesdays<br/>
 ## Topics to cover:
 
 1. 02/15 - [ggplot2](http://r4ds.had.co.nz/data-visualisation.html); √
-1. 02/22 - [github](https://desktop.github.com), [R markdown](http://r4ds.had.co.nz/r-markdown.html), [tibbles](http://r4ds.had.co.nz/tibbles.html) and [strings](http://r4ds.had.co.nz/strings.html)
+1. 02/22 - [github](https://desktop.github.com), [R markdown](http://r4ds.had.co.nz/r-markdown.html), [tibbles](http://r4ds.had.co.nz/tibbles.html) and [strings](http://r4ds.had.co.nz/strings.html); √
   * Github
       * Learn: https://try.github.io
       * Guides: https://guides.github.com
