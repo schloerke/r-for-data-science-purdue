@@ -12,10 +12,8 @@ Subscribe here: [Google Calendar (that can't be embeded)](https://calendar.googl
 
 Wednesdays<br/>
 5:30-6:30pm <br/>
-SC 231 <br/>
-02/22, 03/01, 03/08, (SPRING BREAK), 03/22, 03/29
-
-Room TBD for month of April (05, 12, 19, and 26).  Would like to downsize if appropriate.
+**SC 246** <br/>
+02/22, 03/01, 03/08, (SPRING BREAK), 03/22, 03/29, 04/05, 04/12, 04/19, 04/26
 
 ## Topics to cover:
 
