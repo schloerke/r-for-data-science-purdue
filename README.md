@@ -26,7 +26,7 @@ Wednesdays<br/>
       * Daring Fireball: https://daringfireball.net/projects/markdown/syntax
   * Regular Expressions
       * Regex Pal: http://regexpal.com.s3-website-us-east-1.amazonaws.com
-1. 03/01 - [tidy data√](http://r4ds.had.co.nz/tidy-data.html) and [data transformation√](http://r4ds.had.co.nz/transform.html). Maybe [relational data](http://r4ds.had.co.nz/relational-data.html)
+1. 03/01 - [tidy data](http://r4ds.had.co.nz/tidy-data.html)√ and [data transformation](http://r4ds.had.co.nz/transform.html)√. Maybe [relational data](http://r4ds.had.co.nz/relational-data.html)
   * tidy data
     * Data structure
       * Columns are variables
