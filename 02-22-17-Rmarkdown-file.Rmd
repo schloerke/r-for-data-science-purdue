@@ -1,6 +1,8 @@
 ---
-title: "Untitled"
-output: html_document
+title: "R for DS - 2/22/17"
+output: 
+  html_document:
+    self_contained: true
 ---
 
 ```{r setup, include=FALSE}
@@ -77,6 +79,7 @@ string"
 
 
 ```{r}
+library(stringr)
 diamonds %>%
   mutate(
     cut_awsome = str_replace(cut, "Good", "Awesome")
@@ -87,9 +90,3 @@ barret_diamonds
 barret_diamonds$cut
 ```
 
-
-Regex tester: http://regexpal.com.s3-website-us-east-1.amazonaws.com
-
-Markdown notes: https://daringfireball.net/projects/markdown/syntax
-
-Get a github account!

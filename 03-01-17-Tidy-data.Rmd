@@ -1,0 +1,271 @@
+---
+title: "R for DS - 3/1/17"
+output: 
+  html_document:
+    self_contained: true
+---
+
+# Tidy Data
+
+![tidy data](http://r4ds.had.co.nz/images/tidy-1.png)
+
+
+## Exercise
+
+Why is gather and spread not symetrical?
+
+```{r}
+library(tibble)
+library(dplyr)
+library(tidyr)
+
+stocks <- tibble(
+  year   = c(2015, 2015, 2016, 2016),
+  half  = c(   1,    2,     1,    2),
+  return = c(1.88, 0.59, 0.92, 0.17)
+)
+stocks %>% 
+  spread(year, return)
+stocks %>% 
+  spread(year, return) %>% 
+  gather("year", "return", `2015`:`2016`)
+stocks
+stocks %>% 
+  spread(year, return) %>% 
+  gather("year", "return", `2015`:`2016`) %>% 
+  select(year, half, return)
+```
+
+Tidy the data below
+```{r}
+library(tibble)
+preg <- tribble(
+  ~pregnant, ~male, ~female,
+  "yes",     NA,    10,
+  "no",      20,    12
+)
+preg
+
+preg %>% gather(male, female, key = "sex", value = "count")
+```
+
+
+What do the extra and fill arguments do in separate()? Experiment with the various options for the following two toy datasets.
+
+```{r}
+tibble(x = c("a,b,c", "d,e,f,g", "h,i,j")) %>% 
+  separate(x, c("one", "two", "three"), extra = "merge")
+
+
+tibble(x = c("a,b,c", "d,e", "f,g,i")) %>% 
+  separate(x, c("one", "two", "three"), fill = "right")
+```
+
+# Who Example
+
+```{r}
+who_dt <- tidyr::who
+who_dt
+
+# remove "iso2" and "iso3" from data
+who_dt <- who_dt %>% select(-iso2, -iso3)
+
+# look at data
+tibble::glimpse(who_dt)
+
+# gather all columns and make a 'tall' dataset
+who_dt <- who_dt %>% 
+  gather(new_sp_m014:newrel_f65, key = "key", value = "cases", na.rm = TRUE)
+who_dt
+
+
+
+library(stringr)
+# key_parts <- str_split(who_dt$key, "_")
+# parts_length <- key_parts %>% lapply(length) %>% unlist()
+# who_dt[parts_length != 3,]
+
+# fix bad entry
+who_dt$key <- str_replace(who_dt$key, "newrel", "new_rel")
+# split the 'key' column into 'new', 'type', and 'sexage'
+who_dt <- who_dt %>% separate(key, c("new", "type", "sexage"), sep = "_")
+who_dt
+
+
+# who_dt$sex <- who_dt$sex_age %>% str_sub(1, 1)
+# who_dt$age_range <- who_dt$sex_age %>% str_sub(2)
+
+# make the 'sexage' column into 'sex' and 'age' by spliting after the first character 
+who_dt <- who_dt %>% separate(sexage, c("sex", "age"), sep = 1)
+who_dt
+
+# could remove 'new' as it is the same value
+who_dt %>% select(-new)
+
+# select also works to select certain columns only
+who_dt %>% select(country, type)
+
+# can use mutate and select to combine (then drop previous) columns
+who_dt %>% 
+  mutate(
+    new_type = paste(new, type, sep = "_")
+  ) %>% 
+  select(-new, -type)
+
+# get summary metrics about the cases per country
+who_dt %>%
+  group_by(country) %>%
+  summarise(
+    total_cases = sum(cases),
+    min_cases = min(cases),
+    max_cases = max(cases)
+  )
+
+# count the occurances of each case per country
+who_dt %>% 
+  group_by(country) %>% 
+  count(cases)
+
+# sum the cases per country
+who_dt %>% 
+  group_by(country) %>% 
+  tally(cases)
+
+# group by country
+who_country <- who_dt %>% 
+  group_by(country)
+
+# get total count (ungroup first)
+who_country %>% 
+  ungroup() %>%
+  tally(cases)
+```
+
+# Example
+
+## Clean data
+
+```{r}
+library(readr)
+library(stringr)
+library(dplyr)
+library(tidyr)
+
+billboard <- read_csv("https://github.com/hadley/tidy-data/raw/master/data/billboard.csv")
+billboard <- billboard %>% select(-date.peaked)
+colnames(billboard)[2] <- "artist"
+
+week_cols <- str_c("wk", 1:76)
+colnames(billboard)[-(1:6)] <- week_cols
+
+billboard_tall <- billboard %>%
+  mutate(
+    artist = iconv(artist, "MAC", "ASCII//translit"),
+    track = str_replace(track, " \\(.*?\\)", "")
+  ) %>%
+  gather("week", "rank", wk1:wk76) %>%
+  mutate(
+    week = as.numeric(str_sub(week, 3)),
+    rank = as.numeric(rank)
+  ) %>%
+  filter(!is.na(rank))
+```
+
+## Explore the data
+
+```{r}
+library(ggplot2)
+qplot(week, rank, data = billboard_tall)
+
+# higher is better
+qplot(week, 100 - rank, data = billboard_tall) 
+
+# show the path of a each song
+qplot(week, 100 - rank, data = billboard_tall, geom = "line", group = track)
+
+# color by genre
+qplot(week, 100 - rank, data = billboard_tall, geom = "line", group = track, color = genre)
+# split by genre
+qplot(week, 100 - rank, data = billboard_tall, geom = "line", group = track) + facet_wrap(~ genre)
+```
+
+There are two odd occurances that I can see.  
+
+1. 20 weeks seems to be a hard cut-off
+1. There is a country song that left the charts and came back.
+
+### Country song
+
+```{r}
+billboard_tall %>%
+  filter(genre == "Country", week > 40) %>%
+  select(artist, track) %>%
+  unique()
+
+lonestar <- billboard_tall %>%
+  filter(artist == "Lonestar", track == "Amazed")
+
+ggplot(data = lonestar, mapping = aes(week, 100 - rank)) + 
+  geom_point() + 
+  geom_line()
+```
+
+Missing weeks around the 20's
+
+```{r}
+all_weeks <- 1:max(lonestar$week)
+missing_weeks <- all_weeks[! all_weeks %in% lonestar$week]
+missing_weeks
+lonestarNA <- lonestar[seq_along(missing_weeks),] %>%
+  mutate(
+    week = missing_weeks,
+    rank = NA
+  )
+lonestar_with_missing <- rbind(lonestar, lonestarNA)
+
+ggplot(data = lonestar_with_missing, mapping = aes(week, 100 - rank)) + 
+  geom_point() + 
+  geom_line() + 
+  labs(title = "Lonestar: Amazed")
+```
+
+
+### Hard Cutoff
+
+```{r}
+billboard_tall %>% group_by(artist, track) %>% summarise(max_week = max(week, na.rm = TRUE))
+billboard_tall %>% group_by(artist, track, genre) %>% summarise(max_week = max(week, na.rm = TRUE)) %>% arrange(desc(max_week))
+
+max_week_dt <- billboard_tall %>% group_by(artist, track, genre) %>% summarise(max_week = max(week, na.rm = TRUE)) %>% arrange(desc(max_week))
+
+nrow(max_week_dt)
+
+max_week_dt %>%
+  filter(max_week == 20) %>%
+  nrow()
+
+80/317
+
+
+done_at_20 <- max_week_dt %>%
+  filter(max_week == 20) %>%
+  group_by(genre) %>%
+  count() %>%
+  mutate(twenty_count = n) %>%
+  select(-n)
+done_at_20
+
+genre_count <- max_week_dt %>%
+  group_by(genre) %>%
+  count() %>%
+  mutate(total_count = n) %>%
+  select(-n)
+genre_count
+
+left_join(done_at_20, genre_count) %>%
+  mutate(
+    perc = twenty_count / total_count
+  )
+```
+
+A lot of country songs stop at exactly 20 weeks.
