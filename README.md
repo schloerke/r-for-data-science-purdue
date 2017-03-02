@@ -26,7 +26,21 @@ Wednesdays<br/>
       * Daring Fireball: https://daringfireball.net/projects/markdown/syntax
   * Regular Expressions
       * Regex Pal: http://regexpal.com.s3-website-us-east-1.amazonaws.com
-1. 03/01 - [tidy data](http://r4ds.had.co.nz/tidy-data.html) and [data transformation](http://r4ds.had.co.nz/transform.html). Maybe [relational data](http://r4ds.had.co.nz/relational-data.html)
+1. 03/01 - [tidy data√](http://r4ds.had.co.nz/tidy-data.html) and [data transformation√](http://r4ds.had.co.nz/transform.html). Maybe [relational data](http://r4ds.had.co.nz/relational-data.html)
+  * tidy data
+    * Data structure
+      * Columns are variables
+      * Rows are observations
+      * Data frame cells are values
+    * Functions
+      * split - separate one column into many columns
+      * gather - merge multiple columns into a key column and value column
+  * Data transformations
+    * Functions
+      * mutate - make a alteration to the data set
+      * select - grab certain columns or remove certain columns
+      * group_by - set up the data set ot be grouped by certain columns
+      * summarise - get summary metrics according to the grouped columns
 1. 03/08 - [functions](http://r4ds.had.co.nz/functions.html) and [pipes](http://r4ds.had.co.nz/pipes.html)
 1. 03/22 - [model basics](http://r4ds.had.co.nz/model-basics.html)
 1. 03/29 - [web scraping](https://github.com/schloerke/presentation-2015_10_20-web_scraping/blob/master/Web%20scraping.pdf) - prior presentation
