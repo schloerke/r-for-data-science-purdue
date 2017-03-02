@@ -1,8 +1,6 @@
 ---
 title: "R for DS - 2/22/17"
-output: 
-  html_document:
-    self_contained: true
+output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
@@ -52,20 +50,20 @@ as_tibble(diamonds)
 library(ggplot2)
 as_tibble(diamonds)
 diamonds
-as.data.frame(diamonds)
+as.data.frame(diamonds) %>% head(100) # only show top 100
 diamonds
-str(as.data.frame(diamonds))
+str(as.data.frame(diamonds) %>% head(100))
 glimpse(diamonds)
 diamonds[,1]
-as.data.frame(diamonds)[,1]
+as.data.frame(diamonds)[,1] %>% head(100)
 diamonds[,1]
-diamonds[[1]]
+diamonds[[1]] %>% head(100)
 diamonds
-diamonds$carat
+diamonds$carat %>% head(100)
 diamonds
 diamonds[, 1]
-diamonds[1, ]
-as.data.frame(diamonds)[1, ]
+diamonds[1, ] %>% head(100)
+as.data.frame(diamonds)[1, ] %>% head(100)
 library(dplyr)
 diamonds %>% filter(carat <= 0.25)
 
@@ -87,6 +85,6 @@ diamonds %>%
 barret_diamonds
 
 barret_diamonds
-barret_diamonds$cut
+barret_diamonds$cut %>% head(100)
 ```
 
