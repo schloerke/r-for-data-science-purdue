@@ -41,7 +41,7 @@ Wednesdays<br/>
       * select - grab certain columns or remove certain columns
       * group_by - set up the data set ot be grouped by certain columns
       * summarise - get summary metrics according to the grouped columns
-1. 03/08 - [functions](http://r4ds.had.co.nz/functions.html) and [pipes](http://r4ds.had.co.nz/pipes.html)
+1. 03/08 - [functions](http://r4ds.had.co.nz/functions.html)√ and [pipes](http://r4ds.had.co.nz/pipes.html)√
 1. 03/22 - [model basics](http://r4ds.had.co.nz/model-basics.html)
 1. 03/29 - [web scraping](https://github.com/schloerke/presentation-2015_10_20-web_scraping/blob/master/Web%20scraping.pdf) - prior presentation
 1. 04/05 - [Exploratory Data Analysis](http://r4ds.had.co.nz/exploratory-data-analysis.html)
