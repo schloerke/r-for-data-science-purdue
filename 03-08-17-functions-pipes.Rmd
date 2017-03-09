@@ -1,0 +1,236 @@
+---
+title: "R for DS - 3/08/17"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Pipes
+
+Chilren's story...
+```{r, eval = FALSE}
+bop(
+  scoop(
+    hop(foo_foo, through = forest),
+    up = field_mice
+  ), 
+  on = head
+)
+```
+
+Final version:
+```{r, eval = FALSE}
+library(magrittr)
+
+foo_foo %>%
+  hop(through = forest) %>%
+  scoop(up = field_mouse) %>%
+  hop(through = forest) %>%
+  scoop(up = field_mouse) ->
+through_forest 
+
+through_forest %>%
+  hop(through = forest) %>%
+  scoop(up = field_mouse) %>%
+  hop(through = forest) %>%
+  scoop(up = field_mouse) %>%
+  bop(on = head)
+
+foo_foo %>%
+  hop(through = forest) %>%
+  scoop(up = field_mouse) %>%
+  bop(on = head) ->
+ans
+```
+
+```{r}
+library(magrittr)
+
+# wrong
+"my string" %>%
+  gsub("string", "character")
+
+# correct behavior
+"my string" %>%
+  gsub("string", "character", x = .)
+"my string" %>%
+  gsub("string", "character", .)
+"my string" %>%
+  gsub(x = ., "string", "character")
+
+```
+
+
+## Functions
+
+```{r}
+df <- tibble::tibble(
+  a = rnorm(10),
+  b = rnorm(10),
+  c = rnorm(10),
+  d = rnorm(10)
+)
+df
+
+
+
+df$a <- (df$a - min(df$a, na.rm = TRUE)) / 
+  (max(df$a, na.rm = TRUE) - min(df$a, na.rm = TRUE))
+df$b <- (df$b - min(df$b, na.rm = TRUE)) / 
+  (max(df$b, na.rm = TRUE) - min(df$a, na.rm = TRUE))
+df$c <- (df$c - min(df$c, na.rm = TRUE)) / 
+  (max(df$c, na.rm = TRUE) - min(df$c, na.rm = TRUE))
+df$d <- (df$d - min(df$d, na.rm = TRUE)) / 
+  (max(df$d, na.rm = TRUE) - min(df$d, na.rm = TRUE))
+df
+```
+
+```{r}
+rescale01 <- function(x) {
+  rng <- range(x, na.rm = TRUE)
+  (x - rng[1]) / (rng[2] - rng[1])
+}
+rescale01(c(0, 5, 10))
+rescale01(c(0, 5, 100))
+```
+
+
+'...': all 'other' arguments
+
+```{r}
+string_to_character <- function(x, pattern, replacement, ...) {
+  gsub(pattern = pattern, replacement = replacement, x = x, ...)
+}
+string_to_character(
+  "my string",
+  "string",
+  "character"
+)
+
+string_to_character(
+  "my String",
+  "string",
+  "character",
+  ignore.case = TRUE
+)
+
+```
+
+
+```{r}
+df$a <- rescale01(df$a)
+df$b <- rescale01(df$b)
+df$c <- rescale01(df$c)
+df$d <- rescale01(df$d)
+df
+```
+
+
+
+```{r}
+op_fn <- function(x, y, op) {
+ switch(op,
+   plus = x + y,
+   minus = x - y,
+   times = x * y,
+   divide = x / y,
+   stop("Unknown op!")
+ )
+}
+op_fn(4, 7, "plus")
+
+add_or_divide_only <- function(x, y, op) {
+ switch(op,
+   plus = x + y,
+   minus = ,
+   times = ,
+   divide = x / y,
+   stop("Unknown op!")
+ )
+}
+add_or_divide_only(4, 7, "plus")
+add_or_divide_only(4, 7, "minus")
+add_or_divide_only(4, 7, "times")
+add_or_divide_only(4, 7, "divide")
+
+letter_grade <- function(any_grade) {
+  ans <- switch(any_grade, 
+    "A+" = ,
+    "A" = ,
+    "A-" = "A",
+    "B+" = ,
+    "B" = ,
+    "B-" = "B",
+    "F"
+  )
+  
+  ans
+}
+lapply(
+  c("A", "A+", "B+", "A-", "C"), 
+  letter_grade
+) %>% 
+  unlist()
+```
+
+
+function scope
+
+```{r}
+f <- function(x) {
+  f <- function(x) {
+    f <- function(x) {
+      x + 5
+    }
+    f(x * 2)
+  }
+  f(x + 100)
+}
+f(10)
+
+```
+
+
+
+## Parallel
+
+```{r}
+library(plyr)
+
+my_func <- function(i) {
+  print(i)
+  Sys.sleep(2)
+}
+my_func(1)
+
+library(doParallel)
+registerDoParallel(4)
+
+llply(1:8, my_func, .parallel = FALSE)
+llply(1:40, my_func, .parallel = TRUE)
+
+
+library(memoise)
+
+fib <- function(n) {
+  if (n < 2) {
+    return(1)
+  }
+  fib(n - 1) + fib(n - 2)
+}
+fib(10)
+fib(32)
+# fib_m(300) # take too long!!
+
+library(memoise)
+fib_m <- memoise(function(n) {
+  if (n < 2) {
+    return(1)
+  }
+  fib_m(n - 1) + fib_m(n - 2)
+})
+fib_m(32)
+fib_m(300)
+```
