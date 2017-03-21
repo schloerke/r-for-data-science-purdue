@@ -13,7 +13,7 @@ Subscribe here: [Google Calendar (that can't be embeded)](https://calendar.googl
 Wednesdays<br/>
 5:30-6:30pm <br/>
 **SC 246** <br/>
-02/22, 03/01, 03/08, (SPRING BREAK), 03/22, 03/29, 04/05, 04/12, 04/19, 04/26
+02/22, 03/01, 03/08, (SPRING BREAK), 03/22 - CANCELLED, 03/29, 04/05, 04/12, 04/19, 04/26
 
 ## Topics to cover:
 
@@ -42,12 +42,13 @@ Wednesdays<br/>
       * group_by - set up the data set ot be grouped by certain columns
       * summarise - get summary metrics according to the grouped columns
 1. 03/08 - [functions](http://r4ds.had.co.nz/functions.html)√ and [pipes](http://r4ds.had.co.nz/pipes.html)√
-1. 03/22 - [model basics](http://r4ds.had.co.nz/model-basics.html)
+1. 03/22 - CANCELLED!
 1. 03/29 - [web scraping](https://github.com/schloerke/presentation-2015_10_20-web_scraping/blob/master/Web%20scraping.pdf) - prior presentation
-1. 04/05 - [Exploratory Data Analysis](http://r4ds.had.co.nz/exploratory-data-analysis.html)
+1. 
 1. User provided dataset exploration - would like to do this twice.  Please suggest datasets you'd like to explore!
 1. [nested data.frames](http://r4ds.had.co.nz/many-models.html#list-columns-1) ?
 1. Suggestions? Have already add some string manipulations and webscripting.
+1. [Exploratory Data Analysis](http://r4ds.had.co.nz/exploratory-data-analysis.html)?
 
 
 
