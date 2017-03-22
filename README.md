@@ -18,7 +18,7 @@ Wednesdays<br/>
 ## Topics to cover:
 
 1. 02/15 - [ggplot2](http://r4ds.had.co.nz/data-visualisation.html); √
-1. 02/22 - [github](https://desktop.github.com), [R markdown](http://r4ds.had.co.nz/r-markdown.html), [tibbles](http://r4ds.had.co.nz/tibbles.html) and [strings](http://r4ds.had.co.nz/strings.html); √
+2. 02/22 - [github](https://desktop.github.com), [R markdown](http://r4ds.had.co.nz/r-markdown.html), [tibbles](http://r4ds.had.co.nz/tibbles.html) and [strings](http://r4ds.had.co.nz/strings.html); √
   * Github
       * Learn: https://try.github.io
       * Guides: https://guides.github.com
@@ -26,7 +26,7 @@ Wednesdays<br/>
       * Daring Fireball: https://daringfireball.net/projects/markdown/syntax
   * Regular Expressions
       * Regex Pal: http://regexpal.com.s3-website-us-east-1.amazonaws.com
-1. 03/01 - [tidy data](http://r4ds.had.co.nz/tidy-data.html)√ and [data transformation](http://r4ds.had.co.nz/transform.html)√. Maybe [relational data](http://r4ds.had.co.nz/relational-data.html)
+3. 03/01 - [tidy data](http://r4ds.had.co.nz/tidy-data.html)√ and [data transformation](http://r4ds.had.co.nz/transform.html)√. Maybe [relational data](http://r4ds.had.co.nz/relational-data.html)
   * tidy data
     * Data structure
       * Columns are variables
@@ -41,14 +41,14 @@ Wednesdays<br/>
       * select - grab certain columns or remove certain columns
       * group_by - set up the data set ot be grouped by certain columns
       * summarise - get summary metrics according to the grouped columns
-1. 03/08 - [functions](http://r4ds.had.co.nz/functions.html)√ and [pipes](http://r4ds.had.co.nz/pipes.html)√
-1. 03/22 - CANCELLED!
-1. 03/29 - [web scraping](https://github.com/schloerke/presentation-2015_10_20-web_scraping/blob/master/Web%20scraping.pdf) - prior presentation
-1. 
-1. User provided dataset exploration - would like to do this twice.  Please suggest datasets you'd like to explore!
-1. [nested data.frames](http://r4ds.had.co.nz/many-models.html#list-columns-1) ?
-1. Suggestions? Have already add some string manipulations and webscripting.
-1. [Exploratory Data Analysis](http://r4ds.had.co.nz/exploratory-data-analysis.html)?
+4. 03/08 - [functions](http://r4ds.had.co.nz/functions.html)√ and [pipes](http://r4ds.had.co.nz/pipes.html)√
+5. 03/22 - CANCELLED!
+6. 03/29 - [web scraping](https://github.com/schloerke/presentation-2015_10_20-web_scraping/blob/master/Web%20scraping.pdf) - prior presentation
+7. 
+8. User provided dataset exploration - would like to do this twice.  Please suggest datasets you'd like to explore!
+9. [nested data.frames](http://r4ds.had.co.nz/many-models.html#list-columns-1) ?
+10. Suggestions? Have already add some string manipulations and webscripting.
+11. [Exploratory Data Analysis](http://r4ds.had.co.nz/exploratory-data-analysis.html)?
 
 
 
