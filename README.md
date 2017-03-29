@@ -43,7 +43,7 @@ Wednesdays<br/>
       * summarise - get summary metrics according to the grouped columns
 4. 03/08 - [functions](http://r4ds.had.co.nz/functions.html)√ and [pipes](http://r4ds.had.co.nz/pipes.html)√
 5. 03/22 - CANCELLED!
-6. 03/29 - [web scraping](https://github.com/schloerke/presentation-2015_10_20-web_scraping/blob/master/Web%20scraping.pdf) - prior presentation
+6. 03/29 - [web scraping](https://github.com/schloerke/presentation-2017_03_29-web_scraping/blob/master/Web%20scraping.pdf) - updated presentation
 7. 
 8. User provided dataset exploration - would like to do this twice.  Please suggest datasets you'd like to explore!
 9. [nested data.frames](http://r4ds.had.co.nz/many-models.html#list-columns-1) ?
