@@ -1,0 +1,47 @@
+---
+title: "R for DS - 3/29/17"
+output: pdf_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Web Scraping
+
+```{r}
+library(rvest)
+library(dplyr)
+library(stringr)
+
+
+year <- 2016
+site_url <- "http://www.espn.com/mens-college-basketball/statistics/team/_/stat/scoring-per-game/sort/avgPoints/year/2016/seasontype/2"
+
+team_css <- "td:nth-child(2) a"
+
+html <- read_html(site_url)
+
+html %>%
+  html_nodes(team_css) %>%
+  html_attr("href") %>%
+  str_match("/id/(\\d+)") %>%
+  print() ->
+id_matches
+
+team_ids <- id_matches[,2] %>% print()
+
+team_urls <- str_c("http://www.espn.com/mens-college-basketball/team/stats/_/id/", team_ids, "/year/", year)
+
+west_virginia_url <- team_urls[40] %>% print()
+html <- read_html(west_virginia_url)
+
+stats <- html %>% html_nodes(".mod-content table") # grab both tables
+game_statistics <- stats[[1]] %>% html_table() # grab season avg table
+game_statistics <- game_statistics[-1:-2, ] # remove bad headers
+game_statistics <- game_statistics[-nrow(game_statistics), ] # remove totals
+game_statistics[-1] <- lapply(game_statistics[-1], as.numeric) # make numeric
+
+game_statistics
+```
