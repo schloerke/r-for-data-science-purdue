@@ -13,7 +13,7 @@ Subscribe here: [Google Calendar (that can't be embeded)](https://calendar.googl
 Wednesdays<br/>
 5:30-6:30pm <br/>
 **SC 246** <br/>
-02/22, 03/01, 03/08, (SPRING BREAK), 03/22 - CANCELLED, 03/29, 04/05, 04/12, 04/19, 04/26
+02/22, 03/01, 03/08, (SPRING BREAK), 03/22 - CANCELLED, 03/29, Done for semester
 
 ## Topics to cover:
 
